@@ -4,7 +4,15 @@ pageextension 50123 Req_Worksheet extends "Req. Worksheet"
 
     layout
     {
-
+        //PCPL-25/270323
+        addafter("Vendor Item No.")
+        {
+            field(Comment; Comment)
+            {
+                ApplicationArea = All;
+            }
+        }
+        //PCPL-25/270323
 
     }
     actions
@@ -12,9 +20,7 @@ pageextension 50123 Req_Worksheet extends "Req. Worksheet"
 
         //Unsupported feature: PropertyDeletion on "Action 61". Please convert manually.
 
-
         //Unsupported feature: PropertyDeletion on "Action 83". Please convert manually.
-
 
         //Unsupported feature: PropertyDeletion on "Action 53". Please convert manually.
 
@@ -34,6 +40,16 @@ pageextension 50123 Req_Worksheet extends "Req. Worksheet"
             }
         }
     }
+
+    trigger OnOpenPage()
+    begin
+        SetRange(Indented, false);
+    end;
+
+    trigger OnAfterGetRecord()
+    BEGIN
+        SetRange(Indented, false);
+    END;
 
     var
         RequisionLine: Record 246;

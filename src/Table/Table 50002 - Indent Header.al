@@ -5,7 +5,6 @@ table 50002 "Indent Header"
     // //001 - to get no series by default
     // //002 - to insert userid & creation date
 
-
     fields
     {
         field(1; "Entry Type"; Option)

@@ -7,7 +7,6 @@ page 50014 "Indent-Purchase Order"
     ApplicationArea = all;
     UsageCategory = Lists;
 
-
     layout
     {
         area(content)

@@ -13,7 +13,7 @@ page 50013 "Indent Line List"
     DeleteAllowed = false;
     Editable = true;
     InsertAllowed = false;
-    ModifyAllowed = false;
+    //ModifyAllowed = false;        //PCPL-25/030423
     PageType = List;
     RefreshOnActivate = true;
     SaveValues = false;
@@ -42,6 +42,10 @@ page 50013 "Indent Line List"
                     Editable = false;
                     ApplicationArea = all;
                 }
+                field(Date; Date)
+                {
+                    ApplicationArea = all;
+                }
                 field("Line No."; "Line No.")
                 {
                     ApplicationArea = all;
@@ -53,18 +57,31 @@ page 50013 "Indent Line List"
                 }
                 field("No."; "No.")
                 {
-                    Editable = true;
+                    //Editable = true;
+                    Editable = false;
                     ApplicationArea = all;
                 }
                 field("Variant Code"; "Variant Code")
                 {
                     ApplicationArea = all;
+                    Editable = false;
                 }
                 field("Location Code"; "Location Code")
                 {
                     Editable = false;
                     ApplicationArea = all;
                 }
+                //PCPL-25/030423
+                field(Selected; Selected)
+                {
+                    ApplicationArea = All;
+                }
+                field("Mail Already Sent"; "Mail Already Sent")
+                {
+                    ApplicationArea = All;
+                }
+                //PCPL-25/030423
+
                 field(Description; Description)
                 {
                     Editable = false;
@@ -73,10 +90,12 @@ page 50013 "Indent Line List"
                 field(Category; Category)
                 {
                     ApplicationArea = all;
+                    Editable = false;
                 }
                 field("Description 2"; "Description 2")
                 {
                     ApplicationArea = all;
+                    Editable = false;
                 }
                 field(Quantity; Quantity)
                 {
@@ -86,6 +105,7 @@ page 50013 "Indent Line List"
                 field("Unit of Measure Code"; "Unit of Measure Code")
                 {
                     ApplicationArea = all;
+                    Editable = false;
                 }
                 field("Requirement Date"; "Requirement Date")
                 {
@@ -102,6 +122,7 @@ page 50013 "Indent Line List"
                 field("PO Qty"; "PO Qty")
                 {
                     ApplicationArea = all;
+                    Editable = false;
                 }
                 field(Approved; Approved)
                 {
@@ -135,6 +156,7 @@ page 50013 "Indent Line List"
                 field(Status; Status)
                 {
                     ApplicationArea = all;
+                    Editable = false;
 
                     trigger OnValidate();
                     begin
@@ -152,10 +174,12 @@ page 50013 "Indent Line List"
                 field("Item Category Code"; "Item Category Code")
                 {
                     ApplicationArea = all;
+                    Editable = false;
                 }
                 field("Material Requisitioned"; "Material Requisitioned")
                 {
                     ApplicationArea = all;
+                    Editable = false;
                 }
                 field("Approved Date"; "Approved Date")
                 {

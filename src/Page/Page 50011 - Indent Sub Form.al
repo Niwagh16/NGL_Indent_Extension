@@ -77,6 +77,10 @@ page 50011 "Indent Sub Form"
                 {
                     ApplicationArea = all;
                 }
+                field(Category; Category)
+                {
+                    ApplicationArea = All;
+                }
                 field("FA Component Category"; "FA Component Category")
                 {
                     ApplicationArea = all;

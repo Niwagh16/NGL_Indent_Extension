@@ -17,6 +17,7 @@ page 50010 "Purchase Indent"
             field("No."; "No.")
             {
                 AssistEdit = true;
+                ApplicationArea = All;
 
                 trigger OnAssistEdit();
                 begin
@@ -68,6 +69,18 @@ page 50010 "Purchase Indent"
                 SubPageLink = "Document No." = FIELD("No.");
             }
         }
+        //PCPL-25/170323
+        area(FactBoxes)
+        {
+            part("Attached Documents"; "Document Attachment Factbox")
+            {
+                ApplicationArea = All;
+                Caption = 'Attachments';
+                SubPageLink = "Table ID" = CONST(50002),
+                              "No." = FIELD("No.");
+            }
+        }
+        //PCPL-25/170323
     }
 
     actions
@@ -184,6 +197,8 @@ page 50010 "Purchase Indent"
             }
             group(IncomingDocument)
             {
+                Visible = false;    //PCPl-25/170323
+
                 action(IncomingDocCard)
                 {
                     Caption = 'View Incoming Document';
